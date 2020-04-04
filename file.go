@@ -8,9 +8,9 @@ import (
 )
 
 type fileLogger struct {
-	file         *os.File
-	errorOccured bool
-	errorWriter  io.Writer
+	file          *os.File
+	errorOccurred bool
+	errorWriter   io.Writer
 }
 
 // NewFileLogger -
@@ -28,14 +28,14 @@ func NewFileLogger(fileName string, errorWriter io.Writer) logging.Logger {
 	}
 
 	return &fileLogger{
-		file:         f,
-		errorOccured: (err != nil),
-		errorWriter:  errorWriter,
+		file:          f,
+		errorOccurred: (err != nil),
+		errorWriter:   errorWriter,
 	}
 }
 
 func (thisRef fileLogger) Log(logEntry logging.LogEntry) logging.LogEntry {
-	if thisRef.errorOccured && thisRef.errorWriter != nil {
+	if thisRef.errorOccurred && thisRef.errorWriter != nil {
 		thisRef.errorWriter.Write([]byte(logEntry.Message + "\n"))
 	} else {
 		thisRef.file.WriteString(logEntry.Message + "\n")
