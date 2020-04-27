@@ -14,7 +14,7 @@ type fileLogger struct {
 }
 
 // NewFileLogger -
-func NewFileLogger(fileName string, errorWriter io.Writer) logging.Logger {
+func NewFileLogger(fileName string, errorWriter io.Writer) logging.CoreLogger {
 	var f *os.File
 	var err error
 
