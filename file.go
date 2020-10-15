@@ -4,7 +4,7 @@ import (
 	"io"
 	"os"
 
-	logging "github.com/codemodify/systemkit-logging"
+	logging "github.com/remoteit/systemkit-logging"
 )
 
 type fileLogger struct {

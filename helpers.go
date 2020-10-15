@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	logging "github.com/codemodify/systemkit-logging"
+	logging "github.com/remoteit/systemkit-logging"
 )
 
 func fileOrFolderExists(name string) bool {
